@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overall-board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 35px; 
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 30px); 
+    grid-gap: 5px;
+    border: 2px solid #333;
+    padding: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cell {
+    width: 30px;
+    height: 30px; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.player-x {
+    color: black;
+}
+
+.player-o {
+    color: black;
+}
+
+.player-x.win {
+    color: red;
+}
+
+.player-o.win {
+    color: green;
+}
+
+.highlight {
+    background-color: rgba(0, 0, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.winner {
+    animation: winnerAnimation 0.5s infinite alternate;
+}
+
+@keyframes winnerAnimation {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
